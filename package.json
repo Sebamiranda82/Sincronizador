@@ -1,0 +1,24 @@
+{
+  "name": "sincronizador",
+  "version": "1.0.0",
+  "description": "Sincronizador de plantillas de importación (Personas y Productos)",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win portable"
+  },
+  "devDependencies": {
+    "electron": "33.2.1",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.anuarsistemas.sincronizador",
+    "productName": "Sincronizador",
+    "files": ["main.js", "app/**/*"],
+    "win": {
+      "target": "portable",
+      "artifactName": "Sincronizador.exe"
+    }
+  }
+}

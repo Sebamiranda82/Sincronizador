@@ -1,0 +1,80 @@
+/* Sincronizador — estilos (misma paleta que CFB) */
+:root {
+  --bg: #0a1220;
+  --panel: #0d1a2e;
+  --borde: #1e3a5f;
+  --texto: #e6edf5;
+  --muted: #8aa0b8;
+  --accent: #4a9eda;
+  --danger: #e05c5c;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #eef3f8;
+    --panel: #ffffff;
+    --borde: #c3d3e3;
+    --texto: #1b2a3a;
+    --muted: #5d7287;
+    --accent: #1a6fb0;
+    --danger: #c0392b;
+  }
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--texto);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  padding: 24px 16px;
+}
+.app { max-width: 640px; margin: 0 auto; }
+h1 { font-size: 1.15rem; margin: 0 0 16px; }
+
+/* Pestañas */
+.tabs { display: flex; gap: 8px; margin-bottom: 14px; }
+.tab-btn {
+  flex: 1; padding: 11px; cursor: pointer; font-weight: 700; font-size: .85rem;
+  background: transparent; color: var(--muted);
+  border: 1.5px solid var(--borde); border-radius: 6px;
+}
+.tab-btn.activa {
+  color: var(--accent); background: rgba(74,158,218,.15); border-color: rgba(74,158,218,.4);
+}
+
+/* Panel */
+.panel {
+  display: none; background: var(--panel); border: 1px solid var(--borde);
+  border-radius: 6px; padding: 16px;
+}
+.panel-titulo { font-weight: 700; font-size: .85rem; color: var(--accent); margin-bottom: 6px; }
+.panel-ayuda { font-size: .78rem; color: var(--muted); margin-bottom: 14px; }
+
+/* Casilleros de archivo */
+.file-slot {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 10px 12px; margin-bottom: 10px;
+  border: 1px dashed var(--borde); border-radius: 6px;
+}
+.file-slot.ultimo { margin-bottom: 14px; }
+.file-slot-left { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.file-slot-ico { font-size: 1.4rem; }
+.file-slot-info { min-width: 0; }
+.file-slot-name { font-size: .82rem; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-slot-name.ph { color: var(--muted); font-weight: 400; }
+.file-slot-date { font-size: .72rem; color: var(--muted); }
+.file-slot-btn input[type=file] { display: none; }
+.btn-up {
+  padding: 8px 12px; cursor: pointer; white-space: nowrap; font-size: .8rem; font-weight: 700;
+  color: var(--accent); border: 1.5px solid rgba(74,158,218,.4); border-radius: 6px;
+}
+.btn-up:hover { background: rgba(74,158,218,.15); }
+
+/* Botón principal */
+.btn-ejecutar {
+  width: 100%; padding: 13px; cursor: pointer; font-weight: 800; font-size: .9rem;
+  background: rgba(74,158,218,.15); color: var(--accent);
+  border: 1.5px solid rgba(74,158,218,.4); border-radius: 6px;
+}
+.btn-ejecutar:disabled { opacity: .45; cursor: not-allowed; }
+.status { font-size: .8rem; margin-top: 10px; text-align: center; min-height: 1.2em; }

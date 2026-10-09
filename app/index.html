@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sincronizador</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <main class="app">
+    <h1>Sincronizador de plantillas de importación</h1>
+
+    <nav class="tabs">
+      <button class="tab-btn" data-panel="panel-personas">👥 Sincronizar Personas</button>
+      <button class="tab-btn" data-panel="panel-productos">📦 Sincronizar Productos</button>
+    </nav>
+
+    <section id="panel-personas" class="panel">
+      <div class="panel-titulo">Sincronizar Personas a plantilla de importación</div>
+      <div class="panel-ayuda">Cargá la plantilla vacía y el archivo con los datos de Personas. Se combinan según las reglas de sincronización y se descarga el archivo listo.</div>
+
+      <div class="file-slot">
+        <div class="file-slot-left">
+          <div class="file-slot-ico">📄</div>
+          <div class="file-slot-info">
+            <div class="file-slot-name ph" data-role="label-plantilla">Sin archivo — Plantilla</div>
+            <div class="file-slot-date">Tocá para cargar la plantilla vacía</div>
+          </div>
+        </div>
+        <div class="file-slot-btn">
+          <input type="file" accept=".xlsx,.xls" data-role="input-plantilla">
+          <div class="btn-up" data-role="boton-plantilla">⬆ Cargar</div>
+        </div>
+      </div>
+
+      <div class="file-slot ultimo">
+        <div class="file-slot-left">
+          <div class="file-slot-ico">👥</div>
+          <div class="file-slot-info">
+            <div class="file-slot-name ph" data-role="label-datos">Sin archivo — Datos de Personas</div>
+            <div class="file-slot-date">Tocá para cargar el Excel con los datos</div>
+          </div>
+        </div>
+        <div class="file-slot-btn">
+          <input type="file" accept=".xlsx,.xls" data-role="input-datos">
+          <div class="btn-up" data-role="boton-datos">⬆ Cargar</div>
+        </div>
+      </div>
+
+      <button class="btn-ejecutar" data-role="ejecutar" disabled>⚙️ Ejecutar y descargar</button>
+      <div class="status" data-role="status"></div>
+    </section>
+
+    <section id="panel-productos" class="panel">
+      <div class="panel-titulo">Sincronizar Productos a plantilla de importación</div>
+      <div class="panel-ayuda">Cargá la plantilla vacía y el archivo con los datos de Productos. Se arma la plantilla de importación contable y se descarga el archivo listo.</div>
+
+      <div class="file-slot">
+        <div class="file-slot-left">
+          <div class="file-slot-ico">📄</div>
+          <div class="file-slot-info">
+            <div class="file-slot-name ph" data-role="label-plantilla">Sin archivo — Plantilla</div>
+            <div class="file-slot-date">Tocá para cargar la plantilla vacía</div>
+          </div>
+        </div>
+        <div class="file-slot-btn">
+          <input type="file" accept=".xlsx,.xls" data-role="input-plantilla">
+          <div class="btn-up" data-role="boton-plantilla">⬆ Cargar</div>
+        </div>
+      </div>
+
+      <div class="file-slot ultimo">
+        <div class="file-slot-left">
+          <div class="file-slot-ico">📦</div>
+          <div class="file-slot-info">
+            <div class="file-slot-name ph" data-role="label-datos">Sin archivo — Datos de Productos</div>
+            <div class="file-slot-date">Tocá para cargar el Excel con los datos</div>
+          </div>
+        </div>
+        <div class="file-slot-btn">
+          <input type="file" accept=".xlsx,.xls" data-role="input-datos">
+          <div class="btn-up" data-role="boton-datos">⬆ Cargar</div>
+        </div>
+      </div>
+
+      <button class="btn-ejecutar" data-role="ejecutar" disabled>⚙️ Ejecutar y descargar</button>
+      <div class="status" data-role="status"></div>
+    </section>
+  </main>
+
+  <!-- Orden de carga: librería, utilidades comunes, reglas de cada pestaña, interfaz, arranque -->
+  <script src="js/vendor/xlsx.full.min.js"></script>
+  <script src="js/comun/excel-io.js"></script>
+  <script src="js/personas.js"></script>
+  <script src="js/productos.js"></script>
+  <script src="js/pestana-sync.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/tabs.js"></script>
+</body>
+</html>

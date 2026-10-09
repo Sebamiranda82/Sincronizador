@@ -1,0 +1,14 @@
+CÓMO OBTENER Sincronizador.exe (desde Termux)
+
+1) En github.com crear un repositorio NUEVO y vacío, ej: "sincronizador" (privado está bien).
+2) En Termux:
+     unzip sincronizador-exe.zip && cd sincronizador-exe
+     git init -b main
+     git add -A
+     git commit -m "Sincronizador"
+     git remote add origin https://github.com/Sebamiranda82/sincronizador.git
+     git push -u origin main
+3) En GitHub: pestaña Actions -> "Construir Sincronizador.exe" (corre solo al hacer push, tarda ~3-5 min).
+4) Al terminar, abrir la ejecución -> sección Artifacts -> descargar "Sincronizador-exe" (zip con Sincronizador.exe).
+
+El .exe es portable: no se instala, doble clic y abre.
